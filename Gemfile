@@ -73,3 +73,5 @@ end
 gem "good_job", "~> 3.29"
 
 gem "dotenv-rails", "~> 3.1"
+
+gem "ruby-openai", "~> 7.1"
