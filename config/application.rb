@@ -21,7 +21,20 @@ module PaperVision
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
-    # config.time_zone = "Central Time (US & Canada)"
+    config.time_zone = "Tokyo"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.i18n.default_locale = :ja
+
+    config.generators do |g|
+      g.helper false
+    end
+
+    config.active_job.queue_adapter = :good_job
+
+    config.action_mailer.default_url_options = { host: ENV['SERVICE_HOST'] }
+    config.action_controller.default_url_options = { host: ENV['SERVICE_HOST'] }
   end
 end
+
+Rails.application.routes.default_url_options = { host: ENV['SERVICE_HOST'] }

@@ -61,6 +61,7 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem 'foreman'
 end
 
 group :test do
@@ -68,3 +69,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "good_job", "~> 3.29"
+
+gem "dotenv-rails", "~> 3.1"
