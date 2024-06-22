@@ -70,3 +70,5 @@ group :test do
 end
 
 gem "good_job", "~> 3.29"
+
+gem "dotenv-rails", "~> 3.1"
