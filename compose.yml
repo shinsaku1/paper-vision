@@ -5,7 +5,7 @@ services:
       dockerfile: ./dev/Dockerfile
     tty: true
     stdin_open: true
-    command: tail -f /dev/null
+    command: ${WEB_COMMAND:-/bin/sh -c "tail -f /dev/null"}
     volumes:
       - .:/app
       - bundle_data:/usr/local/bundle
