@@ -29,5 +29,7 @@ module PaperVision
     config.generators do |g|
       g.helper false
     end
+
+    config.active_job.queue_adapter = :good_job
   end
 end
