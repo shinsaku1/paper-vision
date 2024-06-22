@@ -31,5 +31,10 @@ module PaperVision
     end
 
     config.active_job.queue_adapter = :good_job
+
+    config.action_mailer.default_url_options = { host: ENV['SERVICE_HOST'] }
+    config.action_controller.default_url_options = { host: ENV['SERVICE_HOST'] }
   end
 end
+
+Rails.application.routes.default_url_options = { host: ENV['SERVICE_HOST'] }
