@@ -77,3 +77,5 @@ gem "dotenv-rails", "~> 3.1"
 gem "ruby-openai", "~> 7.1"
 
 gem "jsonb_accessor", "~> 1.4"
+
+gem "aasm", "~> 5.5"
