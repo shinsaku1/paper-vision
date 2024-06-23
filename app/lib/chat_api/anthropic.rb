@@ -12,7 +12,7 @@ class ChatAPI::Anthropic
 
   def build_user_message(image, prompt)
     message = ::Anthropic::Message.new(role: 'user')
-    message.contents << ::Anthropic::ImageContent.new(image.data, media_type: image.mime_type)
+    message.contents << ::Anthropic::ImageContent.new(image.data, media_type: image.media_type)
     message.contents << ::Anthropic::TextContent.new(prompt)
     message
   end
