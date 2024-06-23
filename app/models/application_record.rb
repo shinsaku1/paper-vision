@@ -10,4 +10,7 @@ class ApplicationRecord < ActiveRecord::Base
     def later(method, *args)
       RunInstanceMethodJob.perform_later(self, method.to_s, *args)
     end
+  end
+
+  delegate :url_helpers, to: 'Rails.application.routes'
 end
