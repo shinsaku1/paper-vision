@@ -9,7 +9,7 @@ class Anthropic::Client
       def configuration
         @@configuration ||= {
           api_key: ENV['ANTHROPIC_API_KEY'],
-          model: 'claude-3-opus-20240229',
+          model: 'claude-3-5-sonnet-20240620',
           version: '2023-06-01'
         }
       end
