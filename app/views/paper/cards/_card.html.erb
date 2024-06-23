@@ -1,0 +1,55 @@
+<div id="<%= dom_id card %>">
+
+  <% if card.image.attached? %>
+    <p class="my-5">
+      <strong class="block font-medium mb-1">Image:</strong>
+      <%= image_tag card.image.variant(:thumb) %>
+    </p>
+  <% end %>
+
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Name:</strong>
+    <%= card.name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Reading:</strong>
+    <%= card.reading %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Title:</strong>
+    <%= card.title %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Tel:</strong>
+    <%= card.tel %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Mobile:</strong>
+    <%= card.mobile %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Email:</strong>
+    <%= card.email %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Zip code:</strong>
+    <%= card.zip_code %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Address:</strong>
+    <%= card.address %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Qr:</strong>
+    <%= card.qr %>
+  </p>
+</div>

@@ -132,9 +132,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_23_023210) do
   create_table "papers", force: :cascade do |t|
     t.string "type"
     t.string "state"
+    t.jsonb "analysis_attrs"
     t.jsonb "attrs"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["analysis_attrs"], name: "index_papers_on_analysis_attrs", using: :gin
     t.index ["attrs"], name: "index_papers_on_attrs", using: :gin
     t.index ["state"], name: "index_papers_on_state"
     t.index ["type"], name: "index_papers_on_type"
