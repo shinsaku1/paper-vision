@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_23_022432) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_23_023210) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -127,6 +127,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_23_022432) do
     t.index ["priority", "scheduled_at"], name: "index_good_jobs_on_priority_scheduled_at_unfinished_unlocked", where: "((finished_at IS NULL) AND (locked_by_id IS NULL))"
     t.index ["queue_name", "scheduled_at"], name: "index_good_jobs_on_queue_name_and_scheduled_at", where: "(finished_at IS NULL)"
     t.index ["scheduled_at"], name: "index_good_jobs_on_scheduled_at", where: "(finished_at IS NULL)"
+  end
+
+  create_table "papers", force: :cascade do |t|
+    t.string "type"
+    t.string "state"
+    t.jsonb "attrs"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["attrs"], name: "index_papers_on_attrs", using: :gin
+    t.index ["state"], name: "index_papers_on_state"
+    t.index ["type"], name: "index_papers_on_type"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
