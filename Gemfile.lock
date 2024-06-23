@@ -140,6 +140,10 @@ GEM
     jbuilder (2.12.0)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    jsonb_accessor (1.4)
+      activerecord (>= 6.1)
+      activesupport (>= 6.1)
+      pg (>= 0.18.1)
     logger (1.6.0)
     loofah (2.22.0)
       crass (~> 1.0.2)
@@ -305,6 +309,7 @@ DEPENDENCIES
   good_job (~> 3.29)
   importmap-rails
   jbuilder
+  jsonb_accessor (~> 1.4)
   pg (~> 1.1)
   propshaft
   puma (>= 5.0)
